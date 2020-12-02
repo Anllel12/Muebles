@@ -1,0 +1,51 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Muebles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Mueble" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="Nombre"/>
+              <xs:element type="xs:string" name="Precio"/>
+              <xs:element name="Tamaño">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="Ancho"/>
+                    <xs:element type="xs:byte" name="Fondo"/>
+                    <xs:element type="xs:short" name="Altura"/>
+                    <xs:element type="xs:byte" name="PesoBalda"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Materiales">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Principal"/>
+                    <xs:element type="xs:string" name="Secundario"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Embalaje">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Paquete">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="Parte"/>
+                          <xs:element type="xs:string" name="Numero"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="cantidad" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="peso" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="modelo" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

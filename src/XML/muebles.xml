@@ -1,0 +1,62 @@
+<Muebles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespacesSchemaLocation="mueblesEsquemas.xsd">
+    <Mueble modelo="002.785.78">
+        <Nombre>HYLLIS</Nombre>
+        <Precio>10 €</Precio>
+        <Tamaño>
+            <Ancho>60</Ancho>
+            <Fondo>27</Fondo>
+            <Altura>140</Altura>
+            <PesoBalda>25</PesoBalda>
+        </Tamaño>
+        <Materiales>
+            <Principal>Acero galvanizado</Principal>
+            <Secundario>Plástico amídico</Secundario>
+        </Materiales>
+        <Embalaje peso="6.13">
+            <Paquete cantidad="1">
+                <Parte>Estantería</Parte>
+                <Numero>002.785.78</Numero>
+            </Paquete>
+        </Embalaje>
+    </Mueble>
+    <Mueble modelo="603.338.50">
+        <Nombre>BROR</Nombre>
+        <Precio>99 €</Precio>
+        <Tamaño>
+            <Ancho>85</Ancho>
+            <Fondo>55</Fondo>
+            <Altura>88</Altura>
+            <PesoBalda>50</PesoBalda>
+        </Tamaño>
+        <Materiales>
+            <Principal>Acero</Principal>
+            <Secundario>Contrachapado de pino</Secundario>
+        </Materiales>
+        <Embalaje peso="17.20">
+            <Paquete cantidad="1">
+                <Parte>Carrito</Parte>
+                <Numero>603.338.50</Numero>
+            </Paquete>
+        </Embalaje>
+    </Mueble>
+    <Mueble modelo="304.092.95">
+        <Nombre>KOLBJÖRN</Nombre>
+        <Precio>69 €</Precio>
+        <Tamaño>
+            <Ancho>80</Ancho>
+            <Fondo>35</Fondo>
+            <Altura>81</Altura>
+            <PesoBalda>55</PesoBalda>
+        </Tamaño>
+        <Materiales>
+            <Principal>Acero galvanizado</Principal>
+            <Secundario>Revestimiento en polvo de poliéster</Secundario>
+        </Materiales>
+        <Embalaje peso="1">
+            <Paquete cantidad="1">
+                <Parte>Arm int/ext</Parte>
+                <Numero>304.092.95</Numero>
+            </Paquete>
+        </Embalaje>
+    </Mueble>
+</Muebles>
