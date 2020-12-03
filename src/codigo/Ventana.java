@@ -12,6 +12,8 @@ package codigo;
 public class Ventana extends javax.swing.JFrame {
     
     SAX gesSAX = new SAX();
+    
+    Añadir ventanaAñadir = new Añadir(this);
 
     /**
      * Creates new form Ventana
@@ -64,6 +66,11 @@ public class Ventana extends javax.swing.JFrame {
         jMenu2.setText("Editar");
 
         jMItemAñadir.setText("Añadir");
+        jMItemAñadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMItemAñadirActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMItemAñadir);
 
         jMItemModificar.setText("Modificar");
@@ -82,7 +89,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 325, Short.MAX_VALUE))
+                        .addGap(0, 388, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -90,9 +97,9 @@ public class Ventana extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -108,6 +115,10 @@ public class Ventana extends javax.swing.JFrame {
             jLabel1.setText("Error al cargar el XML");   
         }
     }//GEN-LAST:event_jMItemMostrarActionPerformed
+
+    private void jMItemAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemAñadirActionPerformed
+        ventanaAñadir.setVisible(true);
+    }//GEN-LAST:event_jMItemAñadirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,7 +156,7 @@ public class Ventana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMItemAñadir;
     private javax.swing.JMenuItem jMItemGuardar;
     private javax.swing.JMenuItem jMItemModificar;

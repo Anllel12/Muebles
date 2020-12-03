@@ -37,7 +37,6 @@ public class SAX {
         }
     
     public String recorrerSAX(){
-        System.out.println("he entrado");
             try {
                 sh.cadenaResultado = "";
                 parser.parse(ficheroXML, sh);// parseo el XML
