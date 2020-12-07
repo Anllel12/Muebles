@@ -12,6 +12,7 @@ package codigo;
 public class Ventana extends javax.swing.JFrame {
     
     SAX gesSAX = new SAX();
+    XPath gesxPath = new XPath();
     
     Añadir ventanaAñadir = new Añadir(this);
 
@@ -31,9 +32,12 @@ public class Ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAMostrar = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAConsulta = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMItemMostrar = new javax.swing.JMenuItem();
@@ -41,12 +45,22 @@ public class Ventana extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMItemAñadir = new javax.swing.JMenuItem();
         jMItemModificar = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMItemTamaño = new javax.swing.JMenuItem();
+        jMItemMateriales = new javax.swing.JMenuItem();
+        jMItemPrecio = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAMostrar.setColumns(20);
+        jTextAMostrar.setRows(5);
+        jScrollPane1.setViewportView(jTextAMostrar);
+
+        jTextAConsulta.setColumns(20);
+        jTextAConsulta.setRows(5);
+        jScrollPane2.setViewportView(jTextAConsulta);
 
         jMenu1.setText("Archivo");
 
@@ -78,6 +92,34 @@ public class Ventana extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setText("Consultas");
+
+        jMItemTamaño.setText("Tamaño");
+        jMItemTamaño.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMItemTamañoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMItemTamaño);
+
+        jMItemMateriales.setText("Materiales");
+        jMItemMateriales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMItemMaterialesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMItemMateriales);
+
+        jMItemPrecio.setText("Precio");
+        jMItemPrecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMItemPrecioActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMItemPrecio);
+
+        jMenuBar1.add(jMenu3);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -89,7 +131,8 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 388, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -99,7 +142,11 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -109,7 +156,7 @@ public class Ventana extends javax.swing.JFrame {
     private void jMItemMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemMostrarActionPerformed
         if (gesSAX.abrirXML_SAX()){
             jLabel1.setText("XML mostrado perfectamente");
-            jTextArea1.setText(gesSAX.recorrerSAX());
+            jTextAMostrar.setText(gesSAX.recorrerSAX());
         }
         else{
             jLabel1.setText("Error al cargar el XML");   
@@ -119,6 +166,18 @@ public class Ventana extends javax.swing.JFrame {
     private void jMItemAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemAñadirActionPerformed
         ventanaAñadir.setVisible(true);
     }//GEN-LAST:event_jMItemAñadirActionPerformed
+
+    private void jMItemTamañoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemTamañoActionPerformed
+        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/*/Tamaño"));
+    }//GEN-LAST:event_jMItemTamañoActionPerformed
+
+    private void jMItemMaterialesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemMaterialesActionPerformed
+        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/Mueble/Tamaño"));
+    }//GEN-LAST:event_jMItemMaterialesActionPerformed
+
+    private void jMItemPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemPrecioActionPerformed
+        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/Mueble/Tamaño"));
+    }//GEN-LAST:event_jMItemPrecioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,12 +218,19 @@ public class Ventana extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMItemAñadir;
     private javax.swing.JMenuItem jMItemGuardar;
+    private javax.swing.JMenuItem jMItemMateriales;
     private javax.swing.JMenuItem jMItemModificar;
     private javax.swing.JMenuItem jMItemMostrar;
+    private javax.swing.JMenuItem jMItemPrecio;
+    private javax.swing.JMenuItem jMItemTamaño;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextAConsulta;
+    private javax.swing.JTextArea jTextAMostrar;
     // End of variables declaration//GEN-END:variables
 }
