@@ -5,6 +5,9 @@
  */
 package codigo;
 
+import java.io.File;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -16,7 +19,28 @@ import org.w3c.dom.Node;
 public class DOM {
     Document doc;
     
-public boolean añadirDom(String modelo, String nombre, String precio, String ancho,// pongo todas las variables que puede a ver
+    File ficheroXML = new File ("/home/angel/Escritorio/muebles.xml");// pongo el archivo
+    
+    public boolean abrirXML_DOM(){
+        doc = null;
+        
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setIgnoringComments(true);
+            factory.setIgnoringElementContentWhitespace(true);
+            
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            
+            doc = builder.parse(ficheroXML);
+            
+            return true;
+        } 
+        catch (Exception e) {
+            return false;
+        }       
+    }
+    
+    public boolean añadirDom(String modelo, String nombre, String precio, String ancho,// pongo todas las variables que puede a ver
                         String fondo, String altura, String pesoBalda, String principal, 
                         String secundario, String peso, String cantidad, String parte, String numero){
         try{

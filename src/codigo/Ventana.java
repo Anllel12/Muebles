@@ -12,9 +12,12 @@ package codigo;
 public class Ventana extends javax.swing.JFrame {
     
     SAX gesSAX = new SAX();
+    DOM gesDOM = new DOM();
     XPath gesxPath = new XPath();
+    JAXB gesJAXB = new JAXB();
     
     Añadir ventanaAñadir = new Añadir(this);
+    Modificar ventanaModificar = new Modificar(this);
 
     /**
      * Creates new form Ventana
@@ -88,6 +91,11 @@ public class Ventana extends javax.swing.JFrame {
         jMenu2.add(jMItemAñadir);
 
         jMItemModificar.setText("Modificar");
+        jMItemModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMItemModificarActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMItemModificar);
 
         jMenuBar1.add(jMenu2);
@@ -164,7 +172,9 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jMItemMostrarActionPerformed
 
     private void jMItemAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemAñadirActionPerformed
-        ventanaAñadir.setVisible(true);
+        if (gesDOM.abrirXML_DOM()) {
+            ventanaAñadir.setVisible(true);
+        }       
     }//GEN-LAST:event_jMItemAñadirActionPerformed
 
     private void jMItemTamañoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemTamañoActionPerformed
@@ -178,6 +188,12 @@ public class Ventana extends javax.swing.JFrame {
     private void jMItemPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemPrecioActionPerformed
         jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/Mueble/Tamaño"));
     }//GEN-LAST:event_jMItemPrecioActionPerformed
+
+    private void jMItemModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemModificarActionPerformed
+        if (gesJAXB.abrirXML_JAXB()) {
+            ventanaModificar.setVisible(true);
+        }     
+    }//GEN-LAST:event_jMItemModificarActionPerformed
 
     /**
      * @param args the command line arguments
