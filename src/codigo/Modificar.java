@@ -76,7 +76,6 @@ public class Modificar extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jScrollPane14 = new javax.swing.JScrollPane();
         jTextAValidar = new javax.swing.JTextArea();
-        jButtonValidar = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -173,13 +172,6 @@ public class Modificar extends javax.swing.JFrame {
         jTextAValidar.setRows(5);
         jScrollPane14.setViewportView(jTextAValidar);
 
-        jButtonValidar.setText("Validar");
-        jButtonValidar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonValidarActionPerformed(evt);
-            }
-        });
-
         jLabel15.setText("Tiene que comprobar primero si existe el mueble");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -229,13 +221,8 @@ public class Modificar extends javax.swing.JFrame {
                                     .addComponent(jLabel8)
                                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButtonValidar, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,9 +272,7 @@ public class Modificar extends javax.swing.JFrame {
                                 .addComponent(jLabel8))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonValidar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -325,7 +310,8 @@ public class Modificar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
-        if (gesJAXB.validarSerie(jTextAValidar.getText())){      
+        if (gesJAXB.validarSerie(jTextAValidar.getText())){  
+            jButtonModificar.setEnabled(true);
             if(gesJAXB.cambiarValores(jTextAModelo.getText(), jTextANombre.getText(), jTextAPrecio.getText(), jTextAAncho.getText(), jTextAFondo.getText(), jTextAAltura.getText(),
             jTextAPesoBalda.getText(), jTextAPrincipal.getText(), jTextASecundario.getText(), jTextAPeso.getText(), jTextAPaquete.getText(), jTextAParte.getText(), jTextANumero.getText())){
                 ventana.jLabel1.setText("Mueble cambiado perfectamente");  
@@ -340,13 +326,8 @@ public class Modificar extends javax.swing.JFrame {
         else {
             ventana.jLabel1.setText("Error no existe el mueble");  
             this.setVisible(false);
-        }
-        
+        }       
     }//GEN-LAST:event_jButtonModificarActionPerformed
-
-    private void jButtonValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValidarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonValidarActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -385,7 +366,6 @@ public class Modificar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonModificar;
-    private javax.swing.JButton jButtonValidar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
