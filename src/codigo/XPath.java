@@ -36,45 +36,12 @@ public class XPath {
             
             for (int i = 0; i < nodeList.getLength(); i++) {// recorre el nodelist
                 if (nodeList.item(i).getNodeName().equals("Mueble")) {
-                    
-                    String datosNodo[] = procesarMueble(nodeList.item(i));
-                    
-                    
-                    cadenaResultado = String.format("%s \nModelo: %s", cadenaResultado, datosNodo[0]);
-                
-                    cadenaResultado = cadenaResultado + "Nombre: " + datosNodo[0];
-               
-                    cadenaResultado = cadenaResultado + "Precio: " + datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "\n" + "Tamaños [ " + datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "   Ancho: " + datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "   Fondo: " + datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "   Altura: " + datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "   PesoBalda: " + datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "\n" + "Materiales [ "+ datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "   Principal: " + datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "   Secundario: " + datosNodo[0];
-               
-                    cadenaResultado = String.format("%s \nEmbalaje [ \n   Peso: %s", cadenaResultado, datosNodo[0]);
-                
-                    cadenaResultado = String.format("%s   Paquete [ \n        Cantidad:  %s", cadenaResultado, datosNodo[0]);
-                
-                    cadenaResultado = cadenaResultado + "       Parte: " + datosNodo[0];
-                
-                    cadenaResultado = cadenaResultado + "       Numero: " + datosNodo[0];                      
+                   cadenaResultado = cadenaResultado + "\n" + nodeList.item(i).getAttributes().item(0).getFirstChild().getNodeValue();
                 }
                 else{
                     cadenaResultado = cadenaResultado + "\n" + nodeList.item(i).getFirstChild().getNodeValue();
                     }
             }
-            System.out.println(cadenaResultado);
             return cadenaResultado;
         } 
         catch (Exception e){
@@ -82,8 +49,7 @@ public class XPath {
         }
     }
     
-    private String[] procesarMueble(Node n) {
-        
+    private String[] procesarMueble(Node n) {       
         String datos[] = new String[80];
         Node ntemp = null;
         int contador = 1;

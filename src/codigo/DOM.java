@@ -5,7 +5,10 @@
  */
 package codigo;
 
+import com.sun.org.apache.xml.internal.serialize.OutputFormat;
+import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.File;
+import java.io.FileOutputStream;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -119,5 +122,21 @@ public class DOM {
         catch(Exception e){
             return false;
         }
-    }    
+    } 
+    
+    public boolean guardarDom(File fichero){
+        try{            
+            OutputFormat format = new OutputFormat(doc);
+            
+            format.setIndenting(true);
+            
+            XMLSerializer serializer = new XMLSerializer(new FileOutputStream(fichero), format);
+            
+            serializer.serialize(doc);
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+    }
 }

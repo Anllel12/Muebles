@@ -49,9 +49,9 @@ public class Ventana extends javax.swing.JFrame {
         jMItemAñadir = new javax.swing.JMenuItem();
         jMItemModificar = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMItemTamaño = new javax.swing.JMenuItem();
-        jMItemMateriales = new javax.swing.JMenuItem();
+        jMItemNombre = new javax.swing.JMenuItem();
         jMItemPrecio = new javax.swing.JMenuItem();
+        jMItemModelo = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -102,29 +102,29 @@ public class Ventana extends javax.swing.JFrame {
 
         jMenu3.setText("Consultas");
 
-        jMItemTamaño.setText("Tamaño");
-        jMItemTamaño.addActionListener(new java.awt.event.ActionListener() {
+        jMItemNombre.setText("Nombres");
+        jMItemNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMItemTamañoActionPerformed(evt);
+                jMItemNombreActionPerformed(evt);
             }
         });
-        jMenu3.add(jMItemTamaño);
+        jMenu3.add(jMItemNombre);
 
-        jMItemMateriales.setText("Materiales");
-        jMItemMateriales.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMItemMaterialesActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMItemMateriales);
-
-        jMItemPrecio.setText("Precio");
+        jMItemPrecio.setText("Precios");
         jMItemPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMItemPrecioActionPerformed(evt);
             }
         });
         jMenu3.add(jMItemPrecio);
+
+        jMItemModelo.setText("Modelos");
+        jMItemModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMItemModeloActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMItemModelo);
 
         jMenuBar1.add(jMenu3);
 
@@ -177,17 +177,17 @@ public class Ventana extends javax.swing.JFrame {
         }       
     }//GEN-LAST:event_jMItemAñadirActionPerformed
 
-    private void jMItemTamañoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemTamañoActionPerformed
-        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/*/Tamaño"));
-    }//GEN-LAST:event_jMItemTamañoActionPerformed
-
-    private void jMItemMaterialesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemMaterialesActionPerformed
-        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/Mueble/Tamaño"));
-    }//GEN-LAST:event_jMItemMaterialesActionPerformed
+    private void jMItemNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemNombreActionPerformed
+        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/*/Nombre"));
+    }//GEN-LAST:event_jMItemNombreActionPerformed
 
     private void jMItemPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemPrecioActionPerformed
-        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/Mueble/Tamaño"));
+        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/*/Precio"));
     }//GEN-LAST:event_jMItemPrecioActionPerformed
+
+    private void jMItemModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemModeloActionPerformed
+        jTextAConsulta.setText(gesxPath.ejecutaXPath("/Muebles/Mueble"));
+    }//GEN-LAST:event_jMItemModeloActionPerformed
 
     private void jMItemModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemModificarActionPerformed
         if (gesJAXB.abrirXML_JAXB()) {
@@ -234,11 +234,11 @@ public class Ventana extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMItemAñadir;
     private javax.swing.JMenuItem jMItemGuardar;
-    private javax.swing.JMenuItem jMItemMateriales;
+    private javax.swing.JMenuItem jMItemModelo;
     private javax.swing.JMenuItem jMItemModificar;
     private javax.swing.JMenuItem jMItemMostrar;
+    private javax.swing.JMenuItem jMItemNombre;
     private javax.swing.JMenuItem jMItemPrecio;
-    private javax.swing.JMenuItem jMItemTamaño;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

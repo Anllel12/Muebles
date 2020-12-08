@@ -5,6 +5,10 @@
  */
 package codigo;
 
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author angel
@@ -15,6 +19,8 @@ public class Añadir extends javax.swing.JFrame {
     SAX gesSAX = new SAX();
     
     Ventana ventana ;
+    
+    File ficheroXML = new File ("src/XML/muebles.xml");// pongo el archivo
 
     /**
      * Creates new form Añadir
@@ -33,6 +39,7 @@ public class Añadir extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFileChooser1 = new javax.swing.JFileChooser();
         jLabel1 = new javax.swing.JLabel();
         jButtonAñadir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -285,6 +292,7 @@ public class Añadir extends javax.swing.JFrame {
         {           
             ventana.jLabel1.setText("Mueble añadido perfectamente");  
             this.setVisible(false);
+            gesDOM.guardarDom(ficheroXML);
         } 
         else {
             ventana.jLabel1.setText("Error al añadir el mueble");  
@@ -292,7 +300,6 @@ public class Añadir extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButtonAñadirActionPerformed
-
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -330,6 +337,7 @@ public class Añadir extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAñadir;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
