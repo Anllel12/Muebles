@@ -19,7 +19,7 @@ import org.w3c.dom.Node;
 public class DOM {
     Document doc;
     
-    File ficheroXML = new File ("/home/angel/Escritorio/muebles.xml");// pongo el archivo
+    File ficheroXML = new File ("src/XML/muebles.xml");// pongo el archivo
     
     public boolean abrirXML_DOM(){
         doc = null;

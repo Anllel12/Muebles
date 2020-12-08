@@ -25,7 +25,7 @@ public class XPath {
         try{
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             
-            Document XMLDoc = factory.newDocumentBuilder().parse(new File("/home/angel/Escritorio/muebles.xml"));// creo el árbol DOM de la ruta dicha
+            Document XMLDoc = factory.newDocumentBuilder().parse(new File("src/XML/muebles.xml"));// creo el árbol DOM de la ruta dicha
             
             javax.xml.xpath.XPath xPath = XPathFactory.newInstance().newXPath();
             

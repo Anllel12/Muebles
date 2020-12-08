@@ -18,7 +18,7 @@ import javax.xml.bind.Unmarshaller;
  * @author angel
  */
 public class JAXB {
-    File ficheroXML = new File ("/home/angel/Escritorio/muebles.xml");// pongo el archivo
+    File ficheroXML = new File ("src/XML/muebles.xml");// pongo el archivo
     
     Muebles misMuebles;
     

@@ -279,11 +279,11 @@ public class Añadir extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirActionPerformed
+        gesDOM.abrirXML_DOM();   
         if (gesDOM.añadirDom(jTextAModelo.getText(), jTextANombre.getText(), jTextAPrecio.getText(), jTextAAncho.getText(), jTextAFondo.getText(), jTextAAltura.getText(),
             jTextAPesoBalda.getText(), jTextAPrincipal.getText(), jTextASecundario.getText(), jTextAPeso.getText(), jTextAPaquete.getText(), jTextAParte.getText(), jTextANumero.getText())) 
         {           
             ventana.jLabel1.setText("Mueble añadido perfectamente");  
-            gesSAX.recorrerSAX();
             this.setVisible(false);
         } 
         else {
