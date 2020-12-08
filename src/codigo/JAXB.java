@@ -6,10 +6,12 @@
 package codigo;
 
 import esquema.Muebles;
+import esquema.Muebles.Mueble;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
@@ -34,15 +36,21 @@ public class JAXB {
             misMuebles = (Muebles) u.unmarshal(ficheroXML);// deserializa el fichero
             return true;
         } 
-        catch (Exception e) {
+        catch (JAXBException e) {
+            e.printStackTrace();
             return false;
         }
     }
     
-    public boolean validarMueble(String mueble) {
+    public boolean validarMueble(String mueble) throws JAXBException {
         if (!mueble.equals("")) {
-            System.out.println(mueble);
-            List<Muebles.Mueble> muebles = misMuebles.getMueble();//Buscamos que el muebe que hemos escrito existe
+            JAXBContext contexto = JAXBContext.newInstance(Muebles.class);// crea una instancia JAXB
+            
+            Unmarshaller u = contexto.createUnmarshaller();// crea el objeto
+            
+            misMuebles = (Muebles) u.unmarshal(ficheroXML);// deserializa el fichero
+
+            List<Mueble> muebles = misMuebles.getMueble();//Buscamos que el mueble que hemos escrito existe
             for (int i = 0; i < muebles.size(); i++) {
 
                 Muebles.Mueble muebletemp = muebles.get(i);
@@ -75,7 +83,7 @@ public class JAXB {
                 }
             }
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            //marshaller.marshal(misMuebles, new FileWriter(new File("series.xml")));
+            marshaller.marshal(misMuebles, new FileWriter(new File("src/XML/muebles.xml")));// guarda los cambios
             return true;
         } catch (Exception e) {
             return false;

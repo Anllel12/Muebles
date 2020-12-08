@@ -19,7 +19,7 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class SAX {
     SAXParser parser;
-    ManejadorSAX sh;
+    ManejadorSAX sh = new ManejadorSAX();
     File ficheroXML = new File ("src/XML/muebles.xml");// pongo el archivo
     
     public boolean abrirXML_SAX(){

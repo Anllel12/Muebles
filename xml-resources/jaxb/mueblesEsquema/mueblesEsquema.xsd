@@ -10,10 +10,10 @@
               <xs:element name="Tamaño">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:byte" name="Ancho"/>
-                    <xs:element type="xs:byte" name="Fondo"/>
-                    <xs:element type="xs:short" name="Altura"/>
-                    <xs:element type="xs:byte" name="PesoBalda"/>
+                    <xs:element type="xs:string" name="Ancho"/>
+                    <xs:element type="xs:string" name="Fondo"/>
+                    <xs:element type="xs:string" name="Altura"/>
+                    <xs:element type="xs:string" name="PesoBalda"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -34,15 +34,15 @@
                           <xs:element type="xs:string" name="Parte"/>
                           <xs:element type="xs:string" name="Numero"/>
                         </xs:sequence>
-                        <xs:attribute type="xs:byte" name="cantidad" use="optional"/>
+                        <xs:attribute type="xs:string" name="cantidad"/>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
-                  <xs:attribute type="xs:byte" name="peso" use="optional"/>
+                  <xs:attribute type="xs:string" name="peso"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute type="xs:string" name="modelo" use="optional"/>
+            <xs:attribute type="xs:string" name="modelo"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>

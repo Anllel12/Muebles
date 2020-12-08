@@ -44,7 +44,6 @@ public class Ventana extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMItemMostrar = new javax.swing.JMenuItem();
-        jMItemGuardar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMItemAñadir = new javax.swing.JMenuItem();
         jMItemModificar = new javax.swing.JMenuItem();
@@ -74,9 +73,6 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMItemMostrar);
-
-        jMItemGuardar.setText("Guardar");
-        jMenu1.add(jMItemGuardar);
 
         jMenuBar1.add(jMenu1);
 
@@ -233,7 +229,6 @@ public class Ventana extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMItemAñadir;
-    private javax.swing.JMenuItem jMItemGuardar;
     private javax.swing.JMenuItem jMItemModelo;
     private javax.swing.JMenuItem jMItemModificar;
     private javax.swing.JMenuItem jMItemMostrar;
@@ -247,6 +242,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextAConsulta;
-    private javax.swing.JTextArea jTextAMostrar;
+    public javax.swing.JTextArea jTextAMostrar;
     // End of variables declaration//GEN-END:variables
 }
