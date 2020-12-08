@@ -36,10 +36,10 @@ public class Modificar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButtonModificar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAModelo = new javax.swing.JTextArea();
+        jTextAAntiguoNombre = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAPrecio = new javax.swing.JTextArea();
+        jTextAAntiguoPrecio = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextAPrincipal = new javax.swing.JTextArea();
@@ -51,10 +51,10 @@ public class Modificar extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextAAltura = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextANombre = new javax.swing.JTextArea();
+        jTextANuevoNombre = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextAAncho = new javax.swing.JTextArea();
+        jTextANuevoPrecio = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTextAFondo = new javax.swing.JTextArea();
@@ -80,25 +80,24 @@ public class Modificar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Modelo");
+        jLabel1.setText("Antiguo Nombre");
 
         jButtonModificar.setText("Modificar");
-        jButtonModificar.setEnabled(false);
         jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonModificarActionPerformed(evt);
             }
         });
 
-        jTextAModelo.setColumns(20);
-        jTextAModelo.setRows(5);
-        jScrollPane1.setViewportView(jTextAModelo);
+        jTextAAntiguoNombre.setColumns(20);
+        jTextAAntiguoNombre.setRows(5);
+        jScrollPane1.setViewportView(jTextAAntiguoNombre);
 
-        jLabel2.setText("Precio");
+        jLabel2.setText("Antiguo Precio");
 
-        jTextAPrecio.setColumns(20);
-        jTextAPrecio.setRows(5);
-        jScrollPane2.setViewportView(jTextAPrecio);
+        jTextAAntiguoPrecio.setColumns(20);
+        jTextAAntiguoPrecio.setRows(5);
+        jScrollPane2.setViewportView(jTextAAntiguoPrecio);
 
         jLabel3.setText("Material Principal");
 
@@ -114,21 +113,21 @@ public class Modificar extends javax.swing.JFrame {
 
         jLabel5.setText("Altura");
 
-        jLabel6.setText("Nombre");
+        jLabel6.setText("Nuevo Nombre");
 
         jTextAAltura.setColumns(20);
         jTextAAltura.setRows(5);
         jScrollPane5.setViewportView(jTextAAltura);
 
-        jTextANombre.setColumns(20);
-        jTextANombre.setRows(5);
-        jScrollPane6.setViewportView(jTextANombre);
+        jTextANuevoNombre.setColumns(20);
+        jTextANuevoNombre.setRows(5);
+        jScrollPane6.setViewportView(jTextANuevoNombre);
 
-        jLabel7.setText("Ancho");
+        jLabel7.setText("Nuevo Precio");
 
-        jTextAAncho.setColumns(20);
-        jTextAAncho.setRows(5);
-        jScrollPane7.setViewportView(jTextAAncho);
+        jTextANuevoPrecio.setColumns(20);
+        jTextANuevoPrecio.setRows(5);
+        jScrollPane7.setViewportView(jTextANuevoPrecio);
 
         jLabel8.setText("Fondo");
 
@@ -310,10 +309,9 @@ public class Modificar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
-        if (gesJAXB.validarSerie(jTextAValidar.getText())){  
+        if (gesJAXB.validarMueble(jTextAValidar.getText())){  
             jButtonModificar.setEnabled(true);
-            if(gesJAXB.cambiarValores(jTextAModelo.getText(), jTextANombre.getText(), jTextAPrecio.getText(), jTextAAncho.getText(), jTextAFondo.getText(), jTextAAltura.getText(),
-            jTextAPesoBalda.getText(), jTextAPrincipal.getText(), jTextASecundario.getText(), jTextAPeso.getText(), jTextAPaquete.getText(), jTextAParte.getText(), jTextANumero.getText())){
+            if(gesJAXB.cambiarValores(jTextAAntiguoNombre.getText(), jTextANuevoNombre.getText(), jTextAAntiguoPrecio.getText(), jTextANuevoPrecio.getText())){
                 ventana.jLabel1.setText("Mueble cambiado perfectamente");  
                 gesSAX.recorrerSAX();
                 this.setVisible(false);
@@ -396,16 +394,16 @@ public class Modificar extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextAAltura;
-    private javax.swing.JTextArea jTextAAncho;
+    private javax.swing.JTextArea jTextAAntiguoNombre;
+    private javax.swing.JTextArea jTextAAntiguoPrecio;
     private javax.swing.JTextArea jTextAFondo;
-    private javax.swing.JTextArea jTextAModelo;
-    private javax.swing.JTextArea jTextANombre;
+    private javax.swing.JTextArea jTextANuevoNombre;
+    private javax.swing.JTextArea jTextANuevoPrecio;
     private javax.swing.JTextArea jTextANumero;
     private javax.swing.JTextArea jTextAPaquete;
     private javax.swing.JTextArea jTextAParte;
     private javax.swing.JTextArea jTextAPeso;
     private javax.swing.JTextArea jTextAPesoBalda;
-    private javax.swing.JTextArea jTextAPrecio;
     private javax.swing.JTextArea jTextAPrincipal;
     private javax.swing.JTextArea jTextASecundario;
     private javax.swing.JTextArea jTextAValidar;

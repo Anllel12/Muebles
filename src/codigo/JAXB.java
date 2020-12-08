@@ -39,8 +39,9 @@ public class JAXB {
         }
     }
     
-    public boolean validarSerie(String mueble) {
+    public boolean validarMueble(String mueble) {
         if (!mueble.equals("")) {
+            System.out.println(mueble);
             List<Muebles.Mueble> muebles = misMuebles.getMueble();//Buscamos que el muebe que hemos escrito existe
             for (int i = 0; i < muebles.size(); i++) {
 
@@ -50,16 +51,13 @@ public class JAXB {
                     System.out.println("Si existe");
                     return true;
                 }
-
             }
         }
 
         return false;
     }
 
-    public boolean cambiarValores(String modelo, String nombre, String precio, String ancho,// pongo todas las variables que puede a ver
-                        String fondo, String altura, String pesoBalda, String principal, 
-                        String secundario, String peso, String cantidad, String parte, String numero) {
+    public boolean cambiarValores(String aNombre, String nNombre, String aPrecio, String nPrecio) {// pongo todas las variables que puede a ver
         try {
             JAXBContext contexto = JAXBContext.newInstance(Muebles.class);
             Marshaller marshaller = contexto.createMarshaller();
@@ -67,7 +65,13 @@ public class JAXB {
 
             for (int i = 0; i < muebles.size(); i++) {
                 if (muebles.get(i).getNombre().equals(muebleCambiar)) {
-                    
+                   System.out.println(nNombre);
+                    if (!nNombre.equals("")) {
+                        muebles.get(i).setNombre(nNombre);
+                    }
+                    if (!nPrecio.equals("")) {
+                        muebles.get(i).setPrecio(nPrecio);
+                    }
                 }
             }
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
