@@ -48,27 +48,4 @@ public class XPath {
             return ("Error: " + e.toString());
         }
     }
-    
-    private String[] procesarMueble(Node n) {       
-        String datos[] = new String[80];
-        Node ntemp = null;
-        int contador = 1;
-        
-        datos[0] = n.getAttributes().item(0).getNodeValue();
-        
-        NodeList nodos = n.getChildNodes();
-        
-        for (int i = 0; i < nodos.getLength(); i++) {
-            
-            ntemp =  (Node) nodos.item(i);
-            
-            if (ntemp.getNodeType() == Node.ELEMENT_NODE) {
-                
-                datos[contador] = ntemp.getFirstChild().getNodeValue();
-                contador++;
-            }         
-        }
-        
-        return datos;
-    }
 }

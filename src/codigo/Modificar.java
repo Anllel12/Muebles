@@ -134,7 +134,7 @@ public class Modificar extends javax.swing.JFrame {
         try {
             if (gesJAXB.validarMueble(jTextAValidar.getText())){
                 jButtonModificar.setEnabled(true);
-                if(gesJAXB.cambiarValores(jTextAAntiguoNombre.getText(), jTextANuevoNombre.getText(), jTextAAntiguoPrecio.getText(), jTextANuevoPrecio.getText())){
+                if(gesJAXB.cambiarValores( jTextANuevoNombre.getText(), jTextANuevoPrecio.getText())){
                     ventana.jLabel1.setText("Mueble cambiado perfectamente");
                     if (gesSAX.abrirXML_SAX()){
                         ventana.jLabel1.setText("XML mostrado perfectamente");

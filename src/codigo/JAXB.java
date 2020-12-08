@@ -65,7 +65,7 @@ public class JAXB {
         return false;
     }
 
-    public boolean cambiarValores(String aNombre, String nNombre, String aPrecio, String nPrecio) {// pongo todas las variables que puede a ver
+    public boolean cambiarValores(String nNombre, String nPrecio) {// pongo todas las variables que puede a ver
         try {
             JAXBContext contexto = JAXBContext.newInstance(Muebles.class);
             Marshaller marshaller = contexto.createMarshaller();
